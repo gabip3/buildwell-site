@@ -1199,6 +1199,25 @@ body.menu-open .site-header { border-bottom-color: var(--line); }
 }
 .js [data-reveal].is-visible { opacity: 1; transform: none; }
 
+/* Trust line under the hero copy */
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.hero-trust::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  background: var(--blue);
+}
+
 /* ---------- Hero photo: sits under the copy, aligned left, bleeding right ---------- */
 .hero {
   display: block;
