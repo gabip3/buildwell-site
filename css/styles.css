@@ -177,7 +177,7 @@ body.menu-open .site-header { border-bottom-color: var(--line); }
   font-variant-numeric: tabular-nums;
   transition: color 0.2s var(--ease);
 }
-.header-phone span { display: none; }
+.header-phone span { display: none; white-space: nowrap; }
 .header-phone:hover { color: var(--blue); }
 
 .icon-phone {
@@ -1118,7 +1118,50 @@ body.menu-open .site-header { border-bottom-color: var(--line); }
 }
 .footer-col a { color: #fff; overflow-wrap: anywhere; transition: opacity 0.2s var(--ease); }
 .footer-col a:hover { opacity: 0.7; }
-.footer-social { margin-top: 6px; }
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px 16px 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 3px;
+  font-weight: 600;
+}
+.footer-social:hover { opacity: 1 !important; background: #fff; color: var(--blue) !important; }
+.footer-social .icon-ig { width: 22px; height: 22px; }
+
+/* Instagram glyph (header + footer) */
+.icon-ig { fill: none; stroke: currentColor; stroke-width: 1.7; }
+.icon-ig .dot { fill: currentColor; stroke: none; }
+.header-ig {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--blue);
+  transition: color 0.2s var(--ease), opacity 0.2s var(--ease);
+}
+.header-ig .icon-ig { width: 22px; height: 22px; }
+.header-ig:hover { opacity: 0.7; }
+
+/* Small phones: tighter header so logo + Instagram + call + menu fit */
+@media (max-width: 639.98px) {
+  .header-inner { gap: 12px; }
+  .header-actions { gap: 2px; }
+  .header-ig, .header-phone { width: 40px; height: 40px; }
+}
+/* Mid-size desktop: nav + phone + CTA leave no room, Instagram stays in the footer */
+@media (min-width: 1100px) and (max-width: 1399.98px) {
+  .header-ig { display: none; }
+}
+/* Laptop widths: phone collapses to its icon so the nav never crowds */
+@media (min-width: 1100px) and (max-width: 1339.98px) {
+  .header-phone { width: 44px; height: 44px; }
+  .header-phone span { display: none; }
+  .header-phone .icon-phone { display: block; }
+}
 
 .footer-bottom {
   display: flex;
