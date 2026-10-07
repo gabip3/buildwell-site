@@ -1118,6 +1118,7 @@ body.menu-open .site-header { border-bottom-color: var(--line); }
 }
 .footer-col a { color: #fff; overflow-wrap: anywhere; transition: opacity 0.2s var(--ease); }
 .footer-col a:hover { opacity: 0.7; }
+.footer-social { margin-top: 6px; }
 
 .footer-bottom {
   display: flex;
